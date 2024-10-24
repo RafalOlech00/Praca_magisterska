@@ -1,0 +1,100 @@
+[System]
+Name='Temperature_Prediction'
+Type='mamdani'
+Version=2.0
+NumInputs=6
+NumOutputs=1
+NumRules=30
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Voltage'
+Range=[64.85 68.18]
+NumMFs=3
+MF1='low':'trimf',[64.85 64.85 66.67]
+MF2='medium':'trimf',[64.85 66.67 68.18]
+MF3='high':'trimf',[66.67 68.18 68.18]
+
+[Input2]
+Name='ImpederTemp'
+Range=[33.08 37.34]
+NumMFs=3
+MF1='low':'trimf',[33.08 33.08 35.7]
+MF2='medium':'trimf',[33.08 35.7 37.34]
+MF3='high':'trimf',[35.7 37.34 37.34]
+
+[Input3]
+Name='Current'
+Range=[64.67 67.27]
+NumMFs=3
+MF1='low':'trimf',[64.67 64.67 65.99]
+MF2='medium':'trimf',[64.67 65.99 67.27]
+MF3='high':'trimf',[65.99 67.27 67.27]
+
+[Input4]
+Name='Power'
+Range=[148.3 156.49]
+NumMFs=3
+MF1='low':'trimf',[148.3 148.3 154]
+MF2='medium':'trimf',[148.3 154 156.5]
+MF3='high':'trimf',[154 156.5 156.5]
+
+[Input5]
+Name='Speed'
+Range=[47.63 47.74]
+NumMFs=3
+MF1='low':'trimf',[47.63 47.63 47.67]
+MF2='medium':'trimf',[47.63 47.67 47.74]
+MF3='high':'trimf',[47.67 47.74 47.74]
+
+[Input6]
+Name='Frequency'
+Range=[296.7 302.92]
+NumMFs=3
+MF1='low':'trimf',[296.7 296.7 300.08]
+MF2='medium':'trimf',[296.7 300.08 302.9]
+MF3='high':'trimf',[300.1 302.9 302.9]
+
+[Output1]
+Name='Temperature'
+Range=[1135 1383]
+NumMFs=3
+MF1='low':'trimf',[1135 1135 1254]
+MF2='medium':'trimf',[1135 1254 1383]
+MF3='high':'trimf',[1254 1383 1383]
+
+[Rules]
+1 1 1 1 1 1, 1 (1) : 1
+3 3 3 3 3 3, 3 (1) : 1
+2 2 2 2 2 2, 2 (1) : 1
+1 3 3 1 1 1, 2 (1) : 1
+3 1 1 3 3 3, 2 (1) : 1
+2 1 1 2 2 2, 2 (1) : 1
+1 2 2 1 1 1, 2 (1) : 1
+3 2 2 3 3 3, 3 (1) : 1
+2 3 3 2 2 2, 3 (1) : 1
+1 1 2 1 1 1, 1 (1) : 1
+3 3 2 3 3 3, 3 (1) : 1
+2 2 3 2 2 2, 3 (1) : 1
+1 1 3 1 1 1, 1 (1) : 1
+3 3 1 3 3 3, 3 (1) : 1
+2 2 1 2 2 2, 2 (1) : 1
+1 1 1 2 1 1, 1 (1) : 1
+3 3 3 2 3 3, 3 (1) : 1
+2 2 3 2 2 2, 3 (1) : 1
+1 2 1 1 1 1, 2 (1) : 1
+3 1 3 3 3 3, 3 (1) : 1
+2 3 2 2 2 2, 3 (1) : 1
+1 3 1 2 1 1, 2 (1) : 1
+3 2 3 1 3 3, 3 (1) : 1
+2 1 2 3 2 2, 2 (1) : 1
+1 2 3 2 1 1, 2 (1) : 1
+3 1 2 1 3 3, 3 (1) : 1
+2 2 3 3 2 2, 3 (1) : 1
+1 1 1 3 1 1, 1 (1) : 1
+3 3 1 1 2 2, 2 (1) : 1
+2 2 2 2 1 3, 2 (1) : 1
